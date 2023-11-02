@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter Variable", sans-serif;
+}
+
+.hamburger.active > span.bar:nth-child(2) {
+  display: none;
+}
+.hamburger.active > span.bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active > span.bar:nth-child(3) {
+  transform: translateY(-1px) rotate(-45deg);
+}

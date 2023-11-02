@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Shirt",
+      "image": "",
+      "price": 20,
+      "is_featured": true
+    }
+  ]
+}
