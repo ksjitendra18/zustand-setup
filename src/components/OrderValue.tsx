@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import CartProduct from "../types/CartProduct";
+import useCartStore from "../store/cart";
 
 const getTotal = (cartItem: CartProduct[]) => {
   let totalQuantity = 0;
@@ -12,7 +13,7 @@ const getTotal = (cartItem: CartProduct[]) => {
 };
 
 const OrderValue = () => {
-  const cartItems = [];
+  const { cartItems } = useCartStore();
 
   const quantity = getTotal(cartItems).totalQuantity;
   const price = getTotal(cartItems).totalPrice;

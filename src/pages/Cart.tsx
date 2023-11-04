@@ -1,9 +1,10 @@
 import CartItemCard from "../components/CartItemCard";
 import OrderValue from "../components/OrderValue";
 import { Link } from "react-router-dom";
+import useCartStore from "../store/cart";
 
 const Cart = () => {
-  const cartItems = [];
+  const { cartItems } = useCartStore();
 
   if (cartItems && cartItems.length < 1) {
     return (

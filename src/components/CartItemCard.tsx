@@ -1,17 +1,26 @@
 import { Minus, Plus, X } from "lucide-react";
 import React from "react";
 import CartProduct from "../types/CartProduct";
+import useCartStore from "../store/cart";
 
 interface CartItemCardProps {
   product: CartProduct;
 }
 
 const CartItemCard: React.FC<CartItemCardProps> = ({ product }) => {
-  const onIncreaseQuantity = (productId: number) => {};
+  const { increaseQuantity, decreaseQuantity, removeItemFromCart } =
+    useCartStore();
+  const onIncreaseQuantity = (productId: number) => {
+    increaseQuantity(productId);
+  };
 
-  const onDecreaseQuantity = (productId: number) => {};
+  const onDecreaseQuantity = (productId: number) => {
+    decreaseQuantity(productId);
+  };
 
-  const onRemoveItem = (productId: number) => {};
+  const onRemoveItem = (productId: number) => {
+    removeItemFromCart(productId);
+  };
 
   return (
     <div className="flex  hover:shadow-lg  transition-all ease-in duration-150 basis-1/3 flex-1  flex-col border-2 border-slate-500 px-3 py-2 rounded-md">

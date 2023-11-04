@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useCartStore from "../store/cart";
 const Navbar = () => {
   const [mobileNavActive, setMobileNavActive] = useState(false);
 
-  const cartCount = 0;
+  const { cartItems } = useCartStore();
+  const cartCount = cartItems.length;
 
   return (
     <header className="relative h-[80px]  ">

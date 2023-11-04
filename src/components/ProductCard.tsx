@@ -2,13 +2,16 @@ import { ShoppingCart } from "lucide-react";
 import React from "react";
 import Product from "../types/Product";
 import toast from "react-hot-toast";
+import useCartStore from "../store/cart";
 
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const { addItemToCart } = useCartStore();
   const onAddToCart = () => {
+    addItemToCart(product);
     toast.success("Added to cart", {});
   };
   return (
